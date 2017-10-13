@@ -11,6 +11,7 @@ import org.apache.commons.io.FileUtils;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Ignore;
+import org.junit.Rule;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.openqa.selenium.OutputType;
@@ -33,6 +34,8 @@ public class WebDriverBrowserFactory {
     String actualTitle;
     private static StringBuffer verificationErrors = new StringBuffer();
 
+    @Rule
+    public RetryRule retryrule = new RetryRule(3);
     @Ignore
  
     public static WebDriver GetDriver(String browser) {

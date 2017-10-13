@@ -16,7 +16,6 @@ import org.openqa.selenium.WebElement;
 
 import PageObjects.FirstYelpResult;
 import PageObjects.YelpHomePage;
-import PageObjects.YelpRestaurantsLink;
 import PageObjects.YelpSearchBox;
 import PageObjects.YelpSearchBoxInput;
 import PageObjects.YelpSearchBoxSubmit;
@@ -44,7 +43,7 @@ public class CodingChallenge11 extends WebDriverBrowserFactory {
 	        Thread.sleep(1000);
 	        
 	        //Verify Restaurants Link Is Displayed and Spelled Correctly
-	        assertEquals("Restaurants",YelpRestaurantsLink.RestaurantsLink(driver).getText());
+	        assertEquals("Restaurants", driver.findElement(By.linkText("Restaurants")).getText());
 	       
 	        //Select Restruants In Drop Down box in Find
 	        YelpSearchBox.SearchBox(driver).click();

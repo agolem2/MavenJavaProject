@@ -9,10 +9,10 @@ import java.sql.Timestamp;
 
 import org.junit.Rule;
 import org.junit.Test;
+import org.openqa.selenium.By;
 
 import PageObjects.YelpHomePage;
 import PageObjects.YelpOpenNowFilter;
-import PageObjects.YelpRestaurantsLink;
 import PageObjects.YelpSearchBox;
 import PageObjects.YelpSearchBoxInput;
 import PageObjects.YelpSearchBoxSubmit;
@@ -40,7 +40,7 @@ public class CodingChallenge07 extends WebDriverBrowserFactory {
 	        Thread.sleep(1000);
 	        
 	        //Verify Restaurants Link Is Displayed and Spelled Correctly
-	        assertEquals("Restaurants",YelpRestaurantsLink.RestaurantsLink(driver).getText());
+	        assertEquals("Restaurants", driver.findElement(By.linkText("Restaurants")).getText());
 	       
 	        //Select Restruants In Drop Down box in Find
 	        

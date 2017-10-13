@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 public class YelpStarRating {
 
 	public static String StarRating = null;
+	@SuppressWarnings("unused")
 	public static List<WebElement> StarRating (WebDriver driver) {
 		
 		WebElement YelpStarRating = driver.findElement(By.cssSelector("div.media-story > div.biz-rating.biz-rating-large.clearfix > div"));

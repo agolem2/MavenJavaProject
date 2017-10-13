@@ -9,11 +9,13 @@ import java.sql.Timestamp;
 
 import org.junit.Rule;
 import org.junit.Test;
+import org.openqa.selenium.By;
+
 import PageObjects.YelpHomePage;
 import PageObjects.YelpRestaurantTitlePage;
-import PageObjects.YelpRestaurantsLink;
 import PageObjects.YelpSearchBox;
 import PageObjects.YelpSearchBoxInput;
+import PageObjects.YelpSearchBoxRestaurants;
 import PageObjects.YelpSearchBoxSubmit;
 import utiity.ScreenShotOnFailure;
 import utiity.WebDriverBrowserFactory;
@@ -36,36 +38,23 @@ public class CodingChallenge03 extends WebDriverBrowserFactory {
 
 	    	//Get the Yelp URL Home Page
 	        driver.get(YelpHomePage.YelpHomePageURl(driver));
-	        Thread.sleep(1000);
+	        Thread.sleep(2000);
 	        
 	        //Verify Restaurants Link Is Displayed and Spelled Correctly
-	        assertEquals("Restaurants",YelpRestaurantsLink.RestaurantsLink(driver).getText());
-	       
-	        //Select Restruants In Drop Down box in Find
+	        assertEquals("Restaurants", driver.findElement(By.linkText("Restaurants")).getText());
 	        
+	        //Select Restruants In Drop Down box in Find 
 	        YelpSearchBox.SearchBox(driver).click();
+	        YelpSearchBoxInput.SearchBoxInput(driver).click();
+	        YelpSearchBoxRestaurants.SearchBoxRestaurantOption(driver).click();
 	        YelpSearchBoxInput.SearchBoxInput(driver).sendKeys("Restaurants");
 	        
 	        //Search Restruants
-
 	        YelpSearchBoxSubmit.SubmitSearch(driver).click();
 	        
 	        //Verify Search Restruants Page Returned
-
 	        assertEquals("Best Restaurants in Berkeley, CA", YelpRestaurantTitlePage.RestaurantTitlePage(driver));
 	        Thread.sleep(2000);
-	        
-	        //Append Pizza To Search Restruants And Verify Results
-
-	        YelpSearchBox.SearchBox(driver).click();
-	        YelpSearchBox.SearchBox(driver).clear();
-	        YelpSearchBox.SearchBox(driver).sendKeys("Restaurants - Pizza");
-	        YelpSearchBoxSubmit.SubmitSearch(driver).click();
-	        Thread.sleep(3000);
-	        
-	        assertEquals("Best Restaurants - Pizza in Berkeley, CA", YelpRestaurantTitlePage.RestaurantTitlePage(driver));
-
-	        
 
 	    }
 

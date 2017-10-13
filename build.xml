@@ -5,6 +5,7 @@
               directory with the processing instruction <?eclipse.ant.import?>
               as the first entry and export the buildfile again. --><project basedir="." default="build" name="MavenJavaProject">
     <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../../eclipse/java-mars/Eclipse.app/Contents/MacOS/"/>
     <property name="junit.output.dir" value="junit"/>
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.8"/>
@@ -19,11 +20,10 @@
         <pathelement location="../../../.m2/repository/net/sourceforge/htmlunit/htmlunit/2.15/htmlunit-2.15.jar"/>
         <pathelement location="../../../.m2/repository/xalan/xalan/2.7.1/xalan-2.7.1.jar"/>
         <pathelement location="../../../.m2/repository/xalan/serializer/2.7.1/serializer-2.7.1.jar"/>
+        <pathelement location="../../../.m2/repository/xml-apis/xml-apis/1.3.04/xml-apis-1.3.04.jar"/>
         <pathelement location="../../../.m2/repository/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar"/>
         <pathelement location="../../../.m2/repository/org/apache/httpcomponents/httpmime/4.3.3/httpmime-4.3.3.jar"/>
         <pathelement location="../../../.m2/repository/net/sourceforge/htmlunit/htmlunit-core-js/2.15/htmlunit-core-js-2.15.jar"/>
-        <pathelement location="../../../.m2/repository/xerces/xercesImpl/2.11.0/xercesImpl-2.11.0.jar"/>
-        <pathelement location="../../../.m2/repository/xml-apis/xml-apis/1.4.01/xml-apis-1.4.01.jar"/>
         <pathelement location="../../../.m2/repository/net/sourceforge/nekohtml/nekohtml/1.9.21/nekohtml-1.9.21.jar"/>
         <pathelement location="../../../.m2/repository/net/sourceforge/cssparser/cssparser/0.9.14/cssparser-0.9.14.jar"/>
         <pathelement location="../../../.m2/repository/org/w3c/css/sac/1.3/sac-1.3.jar"/>
@@ -80,7 +80,6 @@
         <pathelement location="../../../.m2/repository/org/apache/maven/maven-error-diagnostics/2.0.9/maven-error-diagnostics-2.0.9.jar"/>
         <pathelement location="../../../.m2/repository/org/apache/maven/maven-monitor/2.0.9/maven-monitor-2.0.9.jar"/>
         <pathelement location="../../../.m2/repository/classworlds/classworlds/1.1/classworlds-1.1.jar"/>
-        <pathelement location="../../../.m2/repository/org/apache/commons/commons-lang3/3.1/commons-lang3-3.1.jar"/>
         <pathelement location="../../../.m2/repository/org/apache/maven/maven-toolchain/2.0.9/maven-toolchain-2.0.9.jar"/>
         <pathelement location="../../../.m2/repository/org/apache/maven/plugin-tools/maven-plugin-annotations/3.2/maven-plugin-annotations-3.2.jar"/>
         <pathelement location="../../../.m2/repository/net/sourceforge/jtds/jtds/1.3.1/jtds-1.3.1.jar"/>
@@ -108,25 +107,97 @@
         <pathelement location="../../../.m2/repository/org/apache/commons/commons-exec/1.1/commons-exec-1.1.jar"/>
         <pathelement location="../../../.m2/repository/org/apache/poi/poi-ooxml/3.13/poi-ooxml-3.13.jar"/>
         <pathelement location="../../../.m2/repository/org/apache/poi/poi-ooxml-schemas/3.13/poi-ooxml-schemas-3.13.jar"/>
+        <pathelement location="../../../.m2/repository/com/github/redfish4ktc/soapui/soapui/4.0.1.0/soapui-4.0.1.0.jar"/>
+        <pathelement location="../../../.m2/repository/info/cukes/cucumber-java/1.2.4/cucumber-java-1.2.4.jar"/>
+        <pathelement location="../../../.m2/repository/info/cukes/cucumber-junit/1.2.4/cucumber-junit-1.2.4.jar"/>
+        <pathelement location="../../../.m2/repository/info/cukes/cucumber-core/1.2.4/cucumber-core-1.2.4.jar"/>
+        <pathelement location="../../../.m2/repository/info/cukes/cucumber-html/0.2.3/cucumber-html-0.2.3.jar"/>
+        <pathelement location="../../../.m2/repository/info/cukes/cucumber-jvm-deps/1.0.5/cucumber-jvm-deps-1.0.5.jar"/>
+        <pathelement location="../../../.m2/repository/info/cukes/gherkin/2.12.2/gherkin-2.12.2.jar"/>
+        <pathelement location="../../../.m2/repository/com/fasterxml/jackson/core/jackson-core/2.0.2/jackson-core-2.0.2.jar"/>
+        <pathelement location="../../../.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.0.2/jackson-databind-2.0.2.jar"/>
+        <pathelement location="../../../.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.0.2/jackson-annotations-2.0.2.jar"/>
+        <pathelement location="../../../.m2/repository/com/smartbear/readyapi/ready-api-testserver-client/1.2.1/ready-api-testserver-client-1.2.1.jar"/>
+        <pathelement location="../../../.m2/repository/io/swagger/swagger-annotations/1.5.8/swagger-annotations-1.5.8.jar"/>
+        <pathelement location="../../../.m2/repository/io/swagger/swagger-jaxrs/1.5.8/swagger-jaxrs-1.5.8.jar"/>
+        <pathelement location="../../../.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.4.5/jackson-dataformat-yaml-2.4.5.jar"/>
+        <pathelement location="../../../.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-xml/2.4.5/jackson-dataformat-xml-2.4.5.jar"/>
+        <pathelement location="../../../.m2/repository/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.4.5/jackson-module-jaxb-annotations-2.4.5.jar"/>
+        <pathelement location="../../../.m2/repository/org/codehaus/woodstox/stax2-api/3.1.4/stax2-api-3.1.4.jar"/>
+        <pathelement location="../../../.m2/repository/io/swagger/swagger-core/1.5.8/swagger-core-1.5.8.jar"/>
+        <pathelement location="../../../.m2/repository/io/swagger/swagger-models/1.5.8/swagger-models-1.5.8.jar"/>
+        <pathelement location="../../../.m2/repository/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar"/>
+        <pathelement location="../../../.m2/repository/javax/ws/rs/jsr311-api/1.1.1/jsr311-api-1.1.1.jar"/>
+        <pathelement location="../../../.m2/repository/org/reflections/reflections/0.9.10/reflections-0.9.10.jar"/>
+        <pathelement location="../../../.m2/repository/org/javassist/javassist/3.19.0-GA/javassist-3.19.0-GA.jar"/>
+        <pathelement location="../../../.m2/repository/com/google/code/findbugs/annotations/2.0.1/annotations-2.0.1.jar"/>
+        <pathelement location="../../../.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/2.4.5/jackson-jaxrs-json-provider-2.4.5.jar"/>
+        <pathelement location="../../../.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-base/2.4.5/jackson-jaxrs-base-2.4.5.jar"/>
+        <pathelement location="../../../.m2/repository/com/brsanthu/migbase64/2.2/migbase64-2.2.jar"/>
+        <pathelement location="../../../.m2/repository/com/sun/jersey/jersey-client/1.19/jersey-client-1.19.jar"/>
+        <pathelement location="../../../.m2/repository/com/sun/jersey/jersey-core/1.19/jersey-core-1.19.jar"/>
+        <pathelement location="../../../.m2/repository/com/sun/jersey/contribs/jersey-multipart/1.19/jersey-multipart-1.19.jar"/>
+        <pathelement location="../../../.m2/repository/org/jvnet/mimepull/mimepull/1.9.3/mimepull-1.9.3.jar"/>
+        <pathelement location="../../../.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-joda/2.4.6/jackson-datatype-joda-2.4.6.jar"/>
+        <pathelement location="../../../.m2/repository/joda-time/joda-time/2.3/joda-time-2.3.jar"/>
+        <pathelement location="../../../.m2/repository/org/apache/commons/commons-lang3/3.3.2/commons-lang3-3.3.2.jar"/>
+        <pathelement location="../../../.m2/repository/org/slf4j/slf4j-simple/1.7.10/slf4j-simple-1.7.10.jar"/>
+        <pathelement location="../../../.m2/repository/org/mockito/mockito-all/1.9.5/mockito-all-1.9.5.jar"/>
+        <pathelement location="../../../.m2/repository/junit-addons/junit-addons/1.4/junit-addons-1.4.jar"/>
+        <pathelement location="../../../.m2/repository/xerces/xercesImpl/2.6.2/xercesImpl-2.6.2.jar"/>
+        <pathelement location="../../../.m2/repository/xerces/xmlParserAPIs/2.6.2/xmlParserAPIs-2.6.2.jar"/>
     </path>
     <path id="JUnit 4.libraryclasspath">
         <pathelement location="../../../.p2/pool/plugins/org.junit_4.12.0.v201504281640/junit.jar"/>
         <pathelement location="../../../.p2/pool/plugins/org.hamcrest.core_1.3.0.v201303031735.jar"/>
     </path>
+    <path id="TestNG.libraryclasspath">
+        <pathelement location="../../../.p2/pool/plugins/org.testng.eclipse_6.9.13.201609291640/lib/testng.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/org.testng.eclipse_6.9.13.201609291640/lib/jcommander.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/org.testng.eclipse_6.9.13.201609291640/lib/bsh-2.0b4.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/org.testng.eclipse_6.9.13.201609291640/lib/snakeyaml.jar"/>
+    </path>
     <path id="MavenJavaProject.classpath">
         <pathelement location="target/classes"/>
         <path refid="Maven Dependencies.libraryclasspath"/>
         <path refid="JUnit 4.libraryclasspath"/>
+        <pathelement location="../../../dev/selenium-java-3.4.0/lib/cglib-nodep-3.2.4.jar"/>
+        <pathelement location="../../../dev/selenium-java-3.4.0/lib/commons-codec-1.10.jar"/>
+        <pathelement location="../../../dev/selenium-java-3.4.0/lib/commons-exec-1.3.jar"/>
+        <pathelement location="../../../dev/selenium-java-3.4.0/lib/commons-io-2.5.jar"/>
+        <pathelement location="../../../dev/selenium-java-3.4.0/lib/commons-lang3-3.5.jar"/>
+        <pathelement location="../../../dev/selenium-java-3.4.0/lib/commons-logging-1.2.jar"/>
+        <pathelement location="../../../dev/selenium-java-3.4.0/lib/cssparser-0.9.22.jar"/>
+        <pathelement location="../../../dev/selenium-java-3.4.0/lib/gson-2.8.0.jar"/>
+        <pathelement location="../../../dev/selenium-java-3.4.0/lib/guava-21.0.jar"/>
+        <pathelement location="../../../dev/selenium-java-3.4.0/lib/hamcrest-core-1.3.jar"/>
+        <pathelement location="../../../dev/selenium-java-3.4.0/lib/htmlunit-2.26.jar"/>
+        <pathelement location="../../../dev/selenium-java-3.4.0/lib/htmlunit-core-js-2.26.jar"/>
+        <pathelement location="../../../dev/selenium-java-3.4.0/lib/htmlunit-driver-2.26.jar"/>
+        <pathelement location="../../../dev/selenium-java-3.4.0/lib/httpclient-4.5.3.jar"/>
+        <pathelement location="../../../dev/selenium-java-3.4.0/lib/httpcore-4.4.6.jar"/>
+        <pathelement location="../../../dev/selenium-java-3.4.0/lib/httpmime-4.5.3.jar"/>
+        <pathelement location="../../../dev/selenium-java-3.4.0/lib/javax.servlet-api-3.1.0.jar"/>
+        <pathelement location="../../../dev/selenium-java-3.4.0/lib/jetty-io-9.4.1.v20170120.jar"/>
+        <pathelement location="../../../dev/selenium-java-3.4.0/lib/jetty-util-9.4.1.v20170120.jar"/>
+        <pathelement location="../../../dev/selenium-java-3.4.0/lib/jna-4.1.0.jar"/>
+        <pathelement location="../../../dev/selenium-java-3.4.0/lib/jna-platform-4.1.0.jar"/>
+        <pathelement location="../../../dev/selenium-java-3.4.0/lib/junit-4.12.jar"/>
+        <pathelement location="../../../dev/selenium-java-3.4.0/lib/neko-htmlunit-2.25.jar"/>
+        <pathelement location="../../../dev/selenium-java-3.4.0/lib/phantomjsdriver-1.4.0.jar"/>
+        <pathelement location="../../../dev/selenium-java-3.4.0/lib/sac-1.3.jar"/>
+        <pathelement location="../../../dev/selenium-java-3.4.0/lib/serializer-2.7.2.jar"/>
+        <pathelement location="../../../dev/selenium-java-3.4.0/lib/websocket-api-9.4.3.v20170317.jar"/>
+        <pathelement location="../../../dev/selenium-java-3.4.0/lib/websocket-client-9.4.3.v20170317.jar"/>
+        <pathelement location="../../../dev/selenium-java-3.4.0/lib/websocket-common-9.4.3.v20170317.jar"/>
+        <pathelement location="../../../dev/selenium-java-3.4.0/lib/xalan-2.7.2.jar"/>
+        <pathelement location="../../../dev/selenium-java-3.4.0/lib/xercesImpl-2.11.0.jar"/>
+        <pathelement location="../../../dev/selenium-java-3.4.0/lib/xml-apis-1.4.01.jar"/>
+        <pathelement location="../../../dev/selenium-java-3.4.0/client-combined-3.4.0-nodeps.jar"/>
+        <pathelement location="../../../Downloads/java-client-5.0.0-BETA8.jar"/>
+        <path refid="TestNG.libraryclasspath"/>
     </path>
-    <path id="run.bhhc001_TitlePage.classpath">
-        <path refid="MavenJavaProject.classpath"/>
-        <path refid="Maven Dependencies.libraryclasspath"/>
-    </path>
-    <path id="run.bhhc002_FindAllLinks.classpath">
-        <path refid="MavenJavaProject.classpath"/>
-        <path refid="Maven Dependencies.libraryclasspath"/>
-    </path>
-    <path id="run.bhhc003_ExpressPayment.classpath">
+    <path id="run.CodingChallenge.classpath">
         <path refid="MavenJavaProject.classpath"/>
         <path refid="Maven Dependencies.libraryclasspath"/>
     </path>
@@ -165,28 +236,22 @@
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
     </target>
-    <target name="bhhc001_TitlePage">
+    <target name="CodingChallenge">
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
-            <test name="bhhc.bhhc001_TitlePage" todir="${junit.output.dir}"/>
-            <classpath refid="run.bhhc001_TitlePage.classpath"/>
-        </junit>
-    </target>
-    <target name="bhhc002_FindAllLinks">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="bhhc.bhhc002_FindAllLinks" todir="${junit.output.dir}"/>
-            <classpath refid="run.bhhc002_FindAllLinks.classpath"/>
-        </junit>
-    </target>
-    <target name="bhhc003_ExpressPayment">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="bhhc.bhhc003_ExpressPayment" todir="${junit.output.dir}"/>
-            <classpath refid="run.bhhc003_ExpressPayment.classpath"/>
+            <test name="CodingChallenge.CodingChallenge01" todir="${junit.output.dir}"/>
+            <test name="CodingChallenge.CodingChallenge02" todir="${junit.output.dir}"/>
+            <test name="CodingChallenge.CodingChallenge03" todir="${junit.output.dir}"/>
+            <test name="CodingChallenge.CodingChallenge04" todir="${junit.output.dir}"/>
+            <test name="CodingChallenge.CodingChallenge05" todir="${junit.output.dir}"/>
+            <test name="CodingChallenge.CodingChallenge06" todir="${junit.output.dir}"/>
+            <test name="CodingChallenge.CodingChallenge07" todir="${junit.output.dir}"/>
+            <test name="CodingChallenge.CodingChallenge08" todir="${junit.output.dir}"/>
+            <test name="CodingChallenge.CodingChallenge09" todir="${junit.output.dir}"/>
+            <test name="CodingChallenge.CodingChallenge10" todir="${junit.output.dir}"/>
+            <test name="CodingChallenge.CodingChallenge11" todir="${junit.output.dir}"/>
+            <classpath refid="run.CodingChallenge.classpath"/>
         </junit>
     </target>
     <target name="junitreport">

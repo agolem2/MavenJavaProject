@@ -9,11 +9,13 @@ import java.sql.Timestamp;
 
 import org.junit.Rule;
 import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 
 import PageObjects.YelpHomePage;
-import PageObjects.YelpRestaurantsLink;
 import PageObjects.YelpSearchBox;
 import PageObjects.YelpSearchBoxInput;
+import PageObjects.YelpSearchBoxRestaurants;
 import PageObjects.YelpSearchBoxSubmit;
 import utiity.ScreenShotOnFailure;
 import utiity.WebDriverBrowserFactory;
@@ -49,29 +51,39 @@ public class CodingChallenge06 extends WebDriverBrowserFactory {
 	        Thread.sleep(1000);
 	        
 	        //Verify Restaurants Link Is Displayed and Spelled Correctly
-	        assertEquals("Restaurants",YelpRestaurantsLink.RestaurantsLink(driver).getText());
+	        assertEquals("Restaurants", driver.findElement(By.linkText("Restaurants")).getText());
 	       
-	        //Select Restruants In Drop Down box in Find
-	        
+    	    //Select Neightborhoods Restruants In Drop Down box in Find 
 	        YelpSearchBox.SearchBox(driver).click();
-			//YelpSearchBoxInput.SearchBoxInput(driver).sendKeys(SearchArguments(null, null, null, null));
-	        
-	        
-	        YelpSearchBoxInput.SearchBoxInput(driver).sendKeys(Neighborhoods);
+	        YelpSearchBoxInput.SearchBoxInput(driver).click();
+	        YelpSearchBoxInput.SearchBoxInput(driver).sendKeys("Neighborhoods");
+	        YelpSearchBoxInput.SearchBoxInput(driver).sendKeys(Keys.RETURN);
+	        //Search Restruants
 	        YelpSearchBoxSubmit.SubmitSearch(driver).click();
-	        Thread.sleep(5000);
 	        
-	        YelpSearchBoxInput.SearchBoxInput(driver).sendKeys(Distance);
+	        //Select Neightborhoods Restruants In Drop Down box in Find 
+	        YelpSearchBox.SearchBox(driver).click();
+	        YelpSearchBoxInput.SearchBoxInput(driver).click();
+	        YelpSearchBoxInput.SearchBoxInput(driver).sendKeys("Distance");
+	        YelpSearchBoxInput.SearchBoxInput(driver).sendKeys(Keys.RETURN);
+	        
+	        //Search Restruants
 	        YelpSearchBoxSubmit.SubmitSearch(driver).click();
-	        Thread.sleep(5000);
 
-	        YelpSearchBoxInput.SearchBoxInput(driver).sendKeys(Price);
-	        YelpSearchBoxSubmit.SubmitSearch(driver).click();
-	        Thread.sleep(5000);
+	        //Select Neightborhoods Restruants In Drop Down box in Find 
+	        YelpSearchBox.SearchBox(driver).click();
+	        YelpSearchBoxInput.SearchBoxInput(driver).click();
+	        YelpSearchBoxInput.SearchBoxInput(driver).sendKeys("Price");
+	        YelpSearchBoxInput.SearchBoxInput(driver).sendKeys(Keys.RETURN);
 
-	        YelpSearchBoxInput.SearchBoxInput(driver).sendKeys(Features);
+	        //Select Neightborhoods Restruants In Drop Down box in Find 
+	        YelpSearchBox.SearchBox(driver).click();
+	        YelpSearchBoxInput.SearchBoxInput(driver).click();
+	        YelpSearchBoxInput.SearchBoxInput(driver).sendKeys("Features");
+	        YelpSearchBoxInput.SearchBoxInput(driver).sendKeys(Keys.RETURN);
+
+	        //Search Restruants
 	        YelpSearchBoxSubmit.SubmitSearch(driver).click();
-	        Thread.sleep(5000);
 
 	    }
 
