@@ -13,7 +13,6 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
-import org.junit.runner.notification.Failure;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -98,7 +97,6 @@ public class WebDriverBrowserFactory {
 	    Result result = JUnitCore.runClasses(TestListener.class);
 	    System.out.println("Completed Test Case " + className + " Date:  " + dateNow);
 		System.out.println("Total number of tests Run Count" + result.getRunCount());
-		System.out.println("Total number of Failed tests " + result.getFailureCount());
    
 	        File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 	        
