@@ -1,4 +1,6 @@
 package CodingChallenge;
+import static org.junit.Assert.assertEquals;
+
 /**
  * @author miloonken
  *
@@ -7,10 +9,14 @@ import java.sql.Timestamp;
 
 import org.junit.Rule;
 import org.junit.Test;
-
-import PageObjects.CodingChallengeHomePage;
+import PageObjects.YelpHomePage;
+import PageObjects.YelpRestaurantsLink;
+import PageObjects.YelpSearchBox;
+import PageObjects.YelpSearchBoxInput;
+import PageObjects.YelpSearchBoxSubmit;
 import utiity.ScreenShotOnFailure;
 import utiity.WebDriverBrowserFactory;
+
 public class CodingChallenge02 extends WebDriverBrowserFactory {
 
 	 private static StringBuffer verificationErrors = new StringBuffer();
@@ -20,15 +26,32 @@ public class CodingChallenge02 extends WebDriverBrowserFactory {
 	    static String dateNow = t.toString().replace(":", "_");
 	    String obj = "Screenshots";
 	    String className = this.getClass().getSimpleName();
-
+	    
 	    @Rule
 	    public ScreenShotOnFailure screenShotRule;
 
 	    @Test
-	    public void SelectRestaurantsDDLB() throws Exception {
+	    public void SelectRestaurantsLinkVerify() throws Exception {
 
-	        driver.get(CodingChallengeHomePage.YelpHomePageURl(driver));
-
+	    	//Get the Yelp URL Home Page
+	        driver.get(YelpHomePage.YelpHomePageURl(driver));
+	        Thread.sleep(1000);
+	        
+	        //Verify Restaurants Link Is Displayed and Spelled Correctly
+	        assertEquals("Restaurants",YelpRestaurantsLink.RestaurantsLink(driver).getText());
+	        
+	        //Click on Restruants Link
+	        //YelpRestaurantsLink.RestaurantsLink(driver).click();
+	        //Thread.sleep(1000); 
+	        
+	        //assertEquals("The Best 10 Restaurants in Berkeley, CA", YelpRestaurantTitlePage.RestaurantTitlePage(driver));
+	        
+	        //Select Restruants In Drop Down box in Find
+	        
+	        YelpSearchBox.SearchBox(driver).click();
+	        YelpSearchBoxInput.SearchBoxInput(driver).sendKeys("Restaurants");
+	        YelpSearchBoxSubmit.SubmitSearch(driver).click();
+	        
 	    }
 
 
