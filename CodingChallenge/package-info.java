@@ -1,8 +1,0 @@
-/**
- * 
- */
-/**
- * @author miloonken
- *
- */
-package CodingChallenge;
