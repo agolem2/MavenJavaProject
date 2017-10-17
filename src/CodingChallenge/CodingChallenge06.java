@@ -15,7 +15,6 @@ import org.openqa.selenium.Keys;
 import PageObjects.YelpHomePage;
 import PageObjects.YelpSearchBox;
 import PageObjects.YelpSearchBoxInput;
-import PageObjects.YelpSearchBoxRestaurants;
 import PageObjects.YelpSearchBoxSubmit;
 import utiity.ScreenShotOnFailure;
 import utiity.WebDriverBrowserFactory;
