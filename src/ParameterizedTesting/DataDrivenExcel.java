@@ -16,7 +16,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  * This class allows us the use of an Excel spreadsheet to provide input data to
  * a test or set of tests.
  * 
- * @author A. K. Sahu
+ * @author miloonken
  * 
  */
  

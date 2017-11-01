@@ -11,7 +11,7 @@ import utiity.WebDriverBrowserFactory;
 /**
  * This class explains the usage of data driven excel
  * 
- * @author A. K. Sahu
+ * @author miloonken
  * 
  */
 public class DataDrivenTest extends WebDriverBrowserFactory{
