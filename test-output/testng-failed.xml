@@ -3,15 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="Test.bhhctestTest">
+      <class name="ParameterizedTesting.DataDrivenTest">
         <methods>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-          <include name="TestActualTitle"/>
-          <include name="afterClass"/>
-          <include name="verification"/>
+          <include name="testLogin"/>
         </methods>
-      </class> <!-- Test.bhhctestTest -->
+      </class> <!-- ParameterizedTesting.DataDrivenTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
